@@ -21,7 +21,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-1.jpg',
+      imageUrl: './assets/food-1.jpg',
       tags: ['HealthyFood', 'Fruit Salad', 'BreakFast'],
     },
     {
@@ -32,7 +32,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['India'],
       star: 4,
-      imageUrl: 'assets/food-2.jpg',
+      imageUrl: './assets/food-2.jpg',
       tags: ['FastFood', 'Samosas', 'Snacks'],
     },
     {
@@ -43,7 +43,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['italy'],
       star: 3.5,
-      imageUrl: 'assets/food-3.jpg',
+      imageUrl: './assets/food-3.jpg',
       tags: ['FastFood', 'Pasta', 'Lunch'],
     },
     {
@@ -54,7 +54,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-4.jpg',
+      imageUrl: './assets/food-4.jpg',
       tags: ['Brunch', 'Egg Toast', 'Brunch'],
     },
     {
@@ -65,7 +65,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['italy'],
       star: 2.7,
-      imageUrl: 'assets/food-5.jpg',
+      imageUrl: './assets/food-5.jpg',
       tags: ['FastFood', 'Burger', 'Lunch'],
     },
     {
@@ -76,7 +76,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['italy'],
       star: 2,
-      imageUrl: 'assets/food-6.jpg',
+      imageUrl: './assets/food-6.jpg',
       tags: ['Snacks', 'Coffee', 'Snacks'],
     },
     {
@@ -87,7 +87,7 @@ getAll():Foods[]{
       favorite: false,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-7.jpg',
+      imageUrl: './assets/food-7.jpg',
       tags: ['FastFood', 'Noodles', 'Lunch'],
     },
     {
@@ -98,7 +98,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-8.jpg',
+      imageUrl: './assets/food-8.jpg',
       tags: ['FastFood', 'French Fries', 'Snacks'],
     },
     {
@@ -109,7 +109,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-9.jpg',
+      imageUrl: './assets/food-9.jpg',
       tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -120,7 +120,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-10.jpg',
+      imageUrl: './assets/food-10.jpg',
       tags: ['Brunch', 'Egg Avocado', 'Brunch'],
     },
     {
@@ -131,7 +131,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['italy'],
       star: 4.5,
-      imageUrl: 'assets/food-11.jpg',
+      imageUrl: './assets/food-11.jpg',
       tags: ['Snacks', 'Black Coffee', 'Snacks'],
     },
     {
@@ -142,7 +142,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['japanese'],
       star: 4.8,
-      imageUrl: 'assets/food-12.jpg',
+      imageUrl: './assets/food-12.jpg',
       tags: ['Lunch', 'Sushi', 'Main Course'],
     },
     {
@@ -153,7 +153,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['Indian'],
       star: 4.5,
-      imageUrl: 'assets/food-13.jpg',
+      imageUrl: './assets/food-13.jpg',
       tags: ['Lunch', 'Rice Noodles', 'Main Course'],
     },
     {
@@ -164,7 +164,7 @@ getAll():Foods[]{
       favorite: true,
       origins: ['Chinese'],
       star: 4.5,
-      imageUrl: 'assets/food-14.jpg',
+      imageUrl: './assets/food-14.jpg',
       tags: ['Lunch', 'Fried Rice', 'Main Course'],
     },
     
