@@ -11,6 +11,7 @@ import { FoodService } from '../services/food/food.service';
 })
 export class CartPageComponent implements OnInit {
   cart!:Cart;
+  //cart page
   // count=0;
   constructor(private cartService:CartService ) {
     // let foods=foodService.getAll();
