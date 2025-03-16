@@ -38,5 +38,13 @@ export class CartPageComponent implements OnInit {
    this.setCart();
     // cartItem.price;
   }
-
+  get totalItemCount(): number {
+    return this.cart.totalQuantity; // Use the totalQuantity getter
+  }
+  // get totalPrice():number{
+  //   return this.cart.totalPrice;
+  // }
+//   get totalItemCount(): number {
+//     return this.cart.items.reduce((total, item) => total + item.quantity, 0);
+// }
 }

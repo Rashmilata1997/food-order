@@ -12,6 +12,9 @@ import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 // import { NgxStarRatingModule } from 'ngx-star-rating';
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CartPageComponent,
     FoodpageComponent,
     NotFoundComponent,
+    LoginComponent,
+    SignupComponent,
+    CheckoutComponent,
     // RatingModule
     // NgxStarRatingModule
   ],

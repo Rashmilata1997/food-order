@@ -4,6 +4,7 @@ import { Foods } from '../shared/models/food';
 import { StarRatingComponent } from 'ng-starrating';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { LoginCredService } from '../services/login-cred.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,9 +15,11 @@ onRate($event: Event) {
 throw new Error('Method not implemented.');
 }
   foods:Foods[]=[];
+  
   constructor(private fs:FoodService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
+    
     this.router.params.subscribe(params=>{
       if(params['searchItem']){
       this.foods=this.fs.getAll().filter(food=>food.name.toLowerCase().includes(params['searchItem'].toLowerCase()))
@@ -28,7 +31,7 @@ throw new Error('Method not implemented.');
         this.foods=this.fs.getAll();
       }
     })
-    
+   
   }
 
 }

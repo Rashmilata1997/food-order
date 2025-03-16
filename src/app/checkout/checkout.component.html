@@ -1,0 +1,38 @@
+<div class="checkout-container" *ngIf="cart && cart.items.length > 0; else emptyCart">
+    <h1>Checkout</h1>
+  
+    <div class="cart-items">
+      <ul>
+        <li *ngFor="let cartItem of cart.items">
+          <div class="item-details">
+            <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+            <span>{{ cartItem.food.name }}</span>
+          </div>
+          <div class="item-quantity">
+            Quantity: {{ cartItem.quantity }}
+          </div>
+          <div class="item-price">
+            Price: {{ cartItem.price | currency }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="summary">
+      <h2>Summary</h2>
+      <p>Total Items: {{ cart.totalQuantity }}</p>
+      <p>Total Price: {{ cart.totalPrice | currency }}</p>
+    </div>
+  
+    <button (click)="onPlaceOrder()">Place Order</button>
+  </div>
+  
+  <!-- <ng-template class="checkout"#emptyCart>
+    <p>Your cart is empty. <a routerLink="/">Go back to shopping</a>.</p>
+  </ng-template> -->
+  <ng-template #emptyCart>
+    <div class="checkout-template">
+      <p>Your cart is empty.</p>
+      <a routerLink="/">Go back to shopping</a>
+    </div>
+  </ng-template>
