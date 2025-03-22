@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginCredService } from '../services/login-cred.service';
 import { Router } from '@angular/router';
+import { AbstractControl, NgForm, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -77,13 +78,61 @@ const isUserExist=this.signupUsers.find(m => m.userName == this.loginObj.userNam
       // }
     }
   }
-  onSignUp(){
+  // onSignUp(){
+  //   debugger;
+    
+  //   if(this.signupObj.userName !== "" && this.signupObj.password !== "" && this.signupObj.email !== ""){
+  //     this.signupUsers.push(this.signupObj);
+  //     localStorage.setItem('signupUsers', JSON.stringify(this.signupUsers));
+  //     this.signupObj={
+  //       userName:'',
+  //       email:'',
+  //       password:''
+  //    };
+  //    alert('User signed up successfully!');
+
+  //   }
+  //   else{
+  //     alert('Please enter details !');
+  //   }
+  // }
+  customEmailValidator(control: AbstractControl): ValidationErrors | null {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const valid = emailPattern.test(control.value);
+    return valid ? null : { invalidEmail: true };
+  }
+  onSignUp(signupForm: NgForm) {
+    debugger;
+  
+    // Check if the form is invalid
+    if (signupForm.invalid) {
+      // Mark all fields as touched
+      Object.keys(signupForm.controls).forEach((controlName) => {
+        signupForm.controls[controlName].markAsTouched();
+      });
+  
+      // Show an alert for invalid form
+      alert('Please fill out all fields correctly!');
+      return;
+    }
+  
+    // Push the signup object to the users list
     this.signupUsers.push(this.signupObj);
+  
+    // Save the users list to local storage
     localStorage.setItem('signupUsers', JSON.stringify(this.signupUsers));
-    this.signupObj={
-      userName:'',
-      email:'',
-      password:''
-   };
+  
+    // Clear the form fields
+    this.signupObj = {
+      userName: '',
+      email: '',
+      password: ''
+    };
+  
+    // Reset the form
+    signupForm.resetForm();
+  
+    // Show a success message
+    alert('User signed up successfully!');
   }
 }

@@ -10,13 +10,40 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form>
+				<form #signupForm="ngForm">
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" [(ngModel)]="signupObj.userName">
-					<input type="email" name="email" placeholder="Email" [(ngModel)]="signupObj.email">
-         
-					<input type="password" name="pswd" placeholder="Password" [(ngModel)]="signupObj.password">
-					<button (click)="onSignUp()">Sign up</button>
+					<input type="text" name="txt" placeholder="User name" [(ngModel)]="signupObj.userName"  #userNameInput="ngModel"
+					required>
+<div *ngIf="userNameInput.invalid && userNameInput.touched">
+	<span *ngIf="userNameInput.errors?.['required']" class="errorUser">User name is required.</span>
+  </div>
+					
+				  
+					
+				  
+					<input type="email" name="email" placeholder="Email" [(ngModel)]="signupObj.email" #emailInput="ngModel"
+					required
+					customEmailValidator
+>
+					<div *ngIf="emailInput.invalid && emailInput.touched">
+						<span *ngIf="emailInput.errors?.['required']" class="errorEmail">Email is required.</span>
+						<span  *ngIf="!emailInput.errors?.['required'] && emailInput.errors?.['invalidEmail']" class="errorEmail">Please enter a valid email address.</span>
+					  </div>
+					<input type="password" name="pswd" placeholder="Password" [(ngModel)]="signupObj.password"
+					 #passwordInput="ngModel"  required
+minlength="6"
+      
+					>
+					
+					 
+					  <div *ngIf="passwordInput.invalid && passwordInput.touched">
+						<span *ngIf="passwordInput.errors?.['required']" class="errorPassword">Password is required.</span>
+						<span *ngIf="passwordInput.errors?.['minlength']" class="errorPassword">
+						  Password must be at least 6 characters long.
+						</span>
+					  </div>
+					 
+					<button (click)="onSignUp(signupForm)">Sign up</button>
 				</form>
 			</div>
 

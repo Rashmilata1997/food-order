@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CustomEmailValidatorDirective } from './custom-email-validator.directive';
 // import { NgxStarRatingModule } from 'ngx-star-rating';
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     LoginComponent,
     SignupComponent,
     CheckoutComponent,
+    CustomEmailValidatorDirective
+
     // RatingModule
     // NgxStarRatingModule
   ],
