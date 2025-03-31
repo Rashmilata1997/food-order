@@ -16,7 +16,7 @@ a:hover{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-
+    background-color:  #f9f9f9;
 }
 a.logo{
     font-weight: bold;
@@ -85,4 +85,64 @@ nav ul li span{
     border-radius: 50%; /* Makes the background a circle */
     text-align: center; /* Centers the text horizontally */
     font-size: 14px; /* Adjust font size as needed */
+}
+.secondary-nav {
+  background-color: #d9d9d9; /* Light gray for contrast */
+  padding: 0.25em 0; /* Smaller padding */
+  border-bottom: 1px solid #e72929; /* Same border for consistency */
+  text-align: center;
+}
+
+.secondary-nav a {
+  color: #af1313; /* Same red color */
+  text-decoration: none;
+  padding: 0.5em 0.75em; /* Smaller padding */
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9em; /* Slightly smaller font size */
+}
+
+.secondary-nav a:hover {
+  background-color: #e72929;
+  color: white;
+  border-radius: 4px; /* Rounded corners */
+}
+.recipes-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.recipes-dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  z-index: 1000;
+  width: 200px; /* Adjust width as needed */
+}
+
+/* .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  z-index: 1000;
+} */
+
+.dropdown-menu li {
+  margin-bottom: 5px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
 }

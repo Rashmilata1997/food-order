@@ -48,4 +48,12 @@ private loggedIn = false;
   isLoggedIn() {
     return this.loggedIn; // Return current login state
   }
+  // checkLogin(): boolean {
+  //   return this.isLoggedIn;
+  // }
+
+  redirectToLogin() {
+    this.router.navigate(['/signup']);
+  }
+
 }

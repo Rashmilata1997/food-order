@@ -6,15 +6,9 @@
         <ul>
            
             <li>
-                <!-- <a href="#" routerLink="/login">Login</a> -->
-                <!-- <div class="welcome-message">
-                    <p *ngIf="username">Welcome, {{ username }}!</p>
-                  </div> -->
-                <!-- <a href="#" routerLink="/signup">SignUp</a> -->
-               
+             
+              <!-- <a href="#" routerLink="/feedback">Feedbacks</a>  -->
                 <a *ngIf="!LoginCred.isLoggedIn()" routerLink="/signup">Login</a>
-               
-  <!-- Show Logout button and username when user IS logged in -->
 
     <a *ngIf="LoginCred.isLoggedIn()">{{ LoginCred.getUser()?.username }}!</a>
     <a *ngIf="LoginCred.isLoggedIn()"(click)="onLogout()">Logout</a>
@@ -25,6 +19,25 @@
             </li>
         </ul>
     </nav>
+    
 </div>
 
+  <nav class="secondary-nav">
+    <a routerLink="/feedback">Feedback</a>
+    <div class="recipes-dropdown">
+      <a>Recipes</a>
+      <!-- <app-recipes></app-recipes> -->
+      <ul class="dropdown-menu">
+        <li><a [routerLink]="['/recipes']" [queryParams]="{ tag: 'BreakFast' }">Breakfast Recipes</a></li>
+        <li><a [routerLink]="['/recipes']" [queryParams]="{ tag: 'Lunch' }">Lunch Recipes</a></li>
+        <li><a [routerLink]="['/recipes']" [queryParams]="{ tag: 'Dinner' }">Dinner Recipes</a></li>
+        <li><a [routerLink]="['/recipes']" [queryParams]="{ tag: 'FastFood' }">FastFood Recipes</a></li>
+        <li><a [routerLink]="['/recipes']" [queryParams]="{ tag: 'Snacks' }">Quick Snack Recipes</a></li>
+        <li><a [routerLink]="['/recipes']" [queryParams]="{ tag: 'Brunch' }">Brunch Recipes</a></li>
+      </ul>
+    </div>
+    <a routerLink="/all">All</a>
+ 
+  
+</nav>
 </header>

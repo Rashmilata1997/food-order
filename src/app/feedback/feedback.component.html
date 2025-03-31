@@ -1,0 +1,49 @@
+
+<marquee class="feed">Your feedback is highly appreciated ! Kindly give your feedback for any UI enhancement.</marquee>
+<div style="margin-top:50px">
+    <div class="feedbackPage" *ngFor="let feedback of feedbackData">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: bold;">{{ feedback.username }}</span>
+          <span style="text-align: right;">{{feedback.rating}}</span>
+        </div>
+        <div style="margin-top: 10px;">
+          <p>{{ feedback.comment }}</p>
+        </div>
+        <div style="margin-top: 10px; font-size: smaller; color: grey;">
+          <p>{{ feedback.date }}</p>
+        </div>
+      </div>
+</div>
+
+<div style="text-align: center; margin: 20px;">
+    <button (click)="openPopup()" class="feedbackButton">📝 Give Feedback</button>
+  </div>
+  
+  <!-- Popup Modal -->
+  <div *ngIf="showPopup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border: 1px solid grey; padding: 20px; width: 300px; z-index: 1000;">
+    <h3>Submit Feedback</h3>
+    <textarea [(ngModel)]="newFeedbackComment" rows="4" style="width: 100%;"></textarea>
+    <div style="margin-top: 10px;">
+        <label>Rate us:</label>
+        <div style="display: flex; gap: 5px; cursor: pointer; margin-top: 5px;">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]" 
+                (click)="selectRating(star)" 
+                [style.color]="star <= newFeedbackRating ? 'gold' : 'grey'">
+            ★
+          </span>
+        </div>
+      </div>
+    <div style="display: flex
+;
+    margin-top: -24px;">
+      <button (click)="submitFeedback()" class="submitButton">Submit</button>
+      <button (click)="closePopup()" class="submitButton1">Cancel</button>
+    </div>
+  </div>
+  
+  <!-- Thank You Message -->
+  <div *ngIf="thankYouMessage" class="thank-you-message">
+    <p>Thank you for your feedback!</p>
+  </div>
+
+  

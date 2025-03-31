@@ -36,6 +36,31 @@
 
             </div>
         </a>
-      
+    
+
+<!-- Feedback Section -->
+<!-- <div class="feedback-section">
+    <h4>Feedback</h4>
+    <form (ngSubmit)="submitFeedback(food)">
+        <label for="rating-{{food.id}}">Rating (1-5):</label>
+        <input type="number" id="rating-{{food.id}}" name="rating" [(ngModel)]="newFeedback.rating" required min="1" max="5">
+        <br>
+        <label for="comment-{{food.id}}">Comment:</label>
+        <textarea id="comment-{{food.id}}" name="comment" [(ngModel)]="newFeedback.comment" required></textarea>
+        <br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <div>
+        <h5>Feedback Received</h5>
+        <ul>
+            <li *ngFor="let feedback of food.feedbacks">
+                <strong>Rating:</strong> {{feedback.rating}} <br>
+                <strong>Comment:</strong> {{feedback.comment}}
+            </li>
+        </ul>
+    </div>
+</div> -->
+
+
     </li>
 </ul>

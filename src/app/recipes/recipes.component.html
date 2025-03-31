@@ -1,0 +1,39 @@
+<div *ngFor="let food of recipes" class="container">
+   
+    <img [src]="food.imageUrl" alt="{{ food.name }}" >
+    
+    <!-- <section style="display: flex; justify-content: space-between; gap: 20px;"> -->
+  <div class="details">
+    <span class="name">{{ food.name }} Recipe</span>
+    <div style="flex: 1; border: 1px solid grey; padding: 10px;">
+        <h3>Ingredients</h3>
+        <ul>
+            <li *ngFor="let ingredient of food.ingredients">{{ ingredient }}</li>
+        </ul>
+            <!-- <li>Sauce: fresh orange and lemon juices, brown sugar, grated orange and lemon zests, and vanilla extract</li>
+            <li>Fruits such as: pineapple, strawberries, kiwis, bananas, oranges, grapes, and blueberries</li>
+           -->
+         
+      </div>
+  
+      <div style="flex: 1; border: 1px solid grey; padding: 10px;">
+        <h3>Directions</h3>
+        <ul>
+            <ol>
+                <li *ngFor="let direction of food.directions">{{ direction }}</li>
+              </ol>
+            <!-- <li>Step 1- Make the sauce on the stove and let it cool.</li>
+            <li>Step 2- Arrange the fruits in a container, then pour the sauce over them.</li>
+            <li>Step 3- Cover and refrigerate to allow the flavors to meld.</li>
+            -->
+          </ul>
+      </div>
+  
+  </div>
+        <!-- </section> -->
+  </div>
+  
+  <div *ngIf="recipes.length === 0" style="text-align: center; margin: 20px; color: red;">
+    <p>No recipes found for this category!</p>
+  </div>
+  

@@ -8,4 +8,7 @@ export class Foods{
     imageUrl!: string;
     cookTime!: string;
     origins!: string[];
+    feedbacks?: { rating: number, comment: string }[] = [];
+    directions?: string[];
+  ingredients?: string[];
 }

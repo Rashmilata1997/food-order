@@ -15,7 +15,9 @@ onRate($event: Event) {
 throw new Error('Method not implemented.');
 }
   foods:Foods[]=[];
-  
+  newFeedback: { rating: number; comment: string } = { rating: 0, comment: '' };
+
+
   constructor(private fs:FoodService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -29,9 +31,18 @@ throw new Error('Method not implemented.');
       }
       else{
         this.foods=this.fs.getAll();
+       
+
       }
     })
    
   }
+  submitFeedback(food: Foods): void {
+    if (this.newFeedback.rating && this.newFeedback.comment) {
+        food.feedbacks?.push({ ...this.newFeedback });
+        this.newFeedback = { rating: 0, comment: '' }; // Reset the form after submission
+    }
+}
+
 
 }

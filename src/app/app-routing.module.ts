@@ -6,6 +6,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -16,7 +18,11 @@ const routes: Routes = [
   {path:'cart-page',component:CartPageComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
-  { path: 'checkout', component: CheckoutComponent }
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'feedback', component: FeedbackComponent },
+  {path:'recipes', component:RecipesComponent},
+
+  { path: '', redirectTo: '/recipes?tag=BreakFast', pathMatch: 'full' },
 ];
 
 @NgModule({

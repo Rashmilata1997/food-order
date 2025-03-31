@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CustomEmailValidatorDirective } from './custom-email-validator.directive';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { RecipesComponent } from './recipes/recipes.component';
 // import { NgxStarRatingModule } from 'ngx-star-rating';
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CustomEmailValidatorDirective } from './custom-email-validator.directiv
     LoginComponent,
     SignupComponent,
     CheckoutComponent,
-    CustomEmailValidatorDirective
+    CustomEmailValidatorDirective,
+    FeedbackComponent,
+    RecipesComponent
 
     // RatingModule
     // NgxStarRatingModule
